@@ -14,13 +14,14 @@ export const HTextField = (props: any) => {
     register,
     formState: { errors },
   } = useFormContext(); // retrieve all hook methods
-  console.log(errors[name]);
+
   return (
     <TextField
       error={!!errors?.[name]}
+      variant="filled"
       helperText={errors?.[name]?.message || ""}
       {...register(name)}
       {...props}
     />
   );
-};;
+};

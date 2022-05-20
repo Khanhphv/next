@@ -14,6 +14,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { Avatar } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -37,7 +38,7 @@ export default function MainLayout(props: Props) {
   const drawer = (
     <div>
       <Toolbar />
-      <Divider />
+      {/* <Divider /> */}
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
@@ -72,6 +73,7 @@ export default function MainLayout(props: Props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          background: "transparent",
         }}
       >
         <Toolbar>
@@ -82,7 +84,17 @@ export default function MainLayout(props: Props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <MenuIcon />
+            <Avatar
+              alt="Remy Sharp"
+              src="/static/images/avatar/1.jpg"
+              sx={{ width: 56, height: 56 }}
+            />
+            <Box textAlign={"left"} ml={1}>
+              <Typography variant="cation" component={"p"}>
+                Phạm Việt Khanh
+              </Typography>
+              <Typography component={"label"}>Phạm Việt Khanh</Typography>
+            </Box>
           </IconButton>
           <Typography variant="h6" noWrap component="div"></Typography>
         </Toolbar>
