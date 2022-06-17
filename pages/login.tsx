@@ -3,11 +3,7 @@ import {
   Button,
   FormControl,
   Grid,
-  IconButton,
   InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  TextField,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
@@ -17,21 +13,24 @@ import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { loginSchema } from "../schema";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Lottie from "lottie-react";
 import google from "../lottie/google.json";
 import discord from "../lottie/discord.json";
+
 function Login() {
   const [values, setValues] = useState({
     password: "",
-    showPassword: false,
+    showPassword: true,
   });
+  const router = useRouter();
 
   const handleChange = (e: any) => {
     setValues({ ...values, password: e.target.value });
   };
-  const onSubmit = (data) => {
+  const onSubmit = (data: any) => {
     // display form data on success
-    alert("SUCCESS!! :-)\n\n" + JSON.stringify(data, null, 4));
+    router.push("/home");
     return false;
   };
   const handleClickShowPassword = () => {
