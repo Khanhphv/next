@@ -1,0 +1,18 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "root-import", 
+      {
+        "paths": [
+          {
+            "rootPathPrefix": "@component",
+            "rootPathSuffix": "component"
+          }
+        ]
+      }
+    ]
+  ]
+}

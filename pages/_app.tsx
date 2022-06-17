@@ -1,22 +1,22 @@
 import '../styles/globals.css'
-import type { ReactElement } from "react";
-import type { AppProps } from "next/app";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
+import type { ReactElement } from 'react'
+import type { AppProps } from 'next/app'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import { CssBaseline } from '@mui/material'
 
 export type LayoutProps = ({
   children,
 }: {
-  children: ReactElement;
-}) => ReactElement;
+  children: ReactElement
+}) => ReactElement
 type PageWithLayoutType = {
-  layout: LayoutProps;
-};
+  layout: LayoutProps
+}
 
 type AppLayoutProps = AppProps & {
-  Component: PageWithLayoutType;
-  pageProps: any;
-};
+  Component: PageWithLayoutType
+  pageProps: any
+}
 const darkTheme = createTheme({
   transitions: {
     duration: {
@@ -34,12 +34,12 @@ const darkTheme = createTheme({
     },
   },
   palette: {
-    mode: "dark",
+    mode: 'dark',
   },
-});
+})
 
 function MyApp({ Component, pageProps }: AppLayoutProps) {
-  const Layout = Component.layout || (({ children }) => <>{children}</>);
+  const Layout = Component.layout || (({ children }) => <>{children}</>)
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }: AppLayoutProps) {
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
-  );
+  )
 }
 
 export default MyApp

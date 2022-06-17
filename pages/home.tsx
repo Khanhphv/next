@@ -1,11 +1,12 @@
-import type { NextPage } from "next";
-import MainLayout from "../component/layout/sidebar";
+import MainLayout from '@component/Layout/sidebar'
+import type { NextPage } from 'next'
+
 const Home = () => {
   return (
     <>
       <div>Khanh0</div>
     </>
-  );
-};
-Home.layout = MainLayout;
-export default Home;
+  )
+}
+Home.layout = MainLayout
+export default Home
