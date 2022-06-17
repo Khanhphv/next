@@ -2,7 +2,8 @@
   "extends": [
     "next", 
     "next/core-web-vitals",
-    "prettier"
+    "prettier",
+    "eslint:recommended"
   ],
   "rules": {
     "react/no-unescaped-entities": "off",
